@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "Better Readability",
+    "version": "1.0",
+    "description": "Modifica la página para mejorar la legibilidad para usuarios.",
+    "permissions": ["activeTab", "scripting"],
+    "action": {
+      "default_icon": "icon.png"
+    },
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["*://aulavirtual3.educa.madrid.org/ies.miguelcatalan.coslada/mod/assign/view.php?id=20938*"],
+        "js": ["content.js"]
+      }
+    ],
+    "host_permissions": [
+      "*://aulavirtual3.educa.madrid.org/*"
+    ],
+    "icons": {
+      "48": "icon.png"
+    }
+  }
+  
